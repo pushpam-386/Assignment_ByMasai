@@ -8,7 +8,7 @@ public class UserRegistration {
         this.userCountry=userCountry;
     }
     public void registerUser(String userName,String userCountry) throws InvalidCountryException{
-        if (userCountry=="India"){
+        if (userCountry.equals("India")){
             System.out.println("User registration done successfully");
         }
         else {
@@ -17,13 +17,12 @@ public class UserRegistration {
         }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws InvalidCountryException{
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter your Name");
-        String name=sc.nextLine();
+        String name=sc.next();
         System.out.println("Enter your Country");
-        String country=sc.nextLine();
-        sc.close();
+        String country=sc.next();
 
         UserRegistration obj=new UserRegistration(name,country);
 
