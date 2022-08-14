@@ -1,12 +1,12 @@
 public class Loan{
 
-    private Loan(){
+//    private Loan(){
+//
+//    }
 
-    }
-
-    public static Loan getObject(){
-        return new Loan();
-    }
+//    public static Loan getObject(){
+//        return
+//    }
 
 
     public double calculateLoanAmount(Employee employeeObj) {

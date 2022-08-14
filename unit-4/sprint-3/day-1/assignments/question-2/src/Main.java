@@ -1,26 +1,26 @@
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.io.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Product[] obj={
-                new Product(6),
-                new Product(7),
-                new Product(8),
-                new Product(9),
-        };
-        ExecutorService service = Executors.newFixedThreadPool(3);
-        for(Product job:obj){
-            service.submit(job);
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        service.shutdown();
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        Employee employee=new Employee();
+        employee.setName("Pushpam");
+        employee.setDateOfBirth("24-01-1998");
+        employee.setDepartment("Infosys");
+        employee.setDesignation("Associate business Analyst");
+        employee.setSalary(38000);
+        File f=new File("C://Users//Vikas//Desktop//read&write//OutObject.txt");
+        f.createNewFile();
+        FileOutputStream fo=new FileOutputStream("C://Users//Vikas//Desktop//read&write//OutObject.txt");
+        ObjectOutputStream oos=new ObjectOutputStream(fo);
+        oos.writeObject(employee);
+        oos.flush();
+        oos.close();
+
+        FileInputStream fi=new FileInputStream("C://Users//Vikas//Desktop//read&write//OutObject.txt");
+        ObjectInputStream ois=new ObjectInputStream(fi);
+        Object obj=ois.readObject();
+        Employee emp=(Employee) obj;
+        System.out.println("Name: "+emp.getName()+"  Salary:  "+emp.getSalary()+"  DOF:  "+emp.getDateOfBirth()+"  Department:  "+emp.getDepartment()+"  Designation: "+emp.getDesignation());
+        ois.close();
     }
 }
-
-
-

@@ -3,7 +3,6 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Mobile {
-
     HashMap<String, ArrayList<String>> mobiles = new HashMap<>();
 
     public String addMobile(String company, String model){
@@ -40,8 +39,5 @@ public class Mobile {
         catch (InvalidMobileException e){
             System.out.println("Invalid Mobile Exception");
         }
-
     }
-
-
 }

@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args){
-        Loan loan=Loan.getObject();
+        Loan loan=new Loan();
 
         double permanentEmployee=loan.calculateLoanAmount(new PermanentEmployee(1,"Name1",1000));
         double temporaryEmployee=loan.calculateLoanAmount(new TemporaryEmployee(2,"Name2",20,100));
