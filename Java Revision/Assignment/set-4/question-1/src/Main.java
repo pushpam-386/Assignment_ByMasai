@@ -13,6 +13,6 @@ public class Main {
         for (Product product:list) {
             System.out.println(product.getCompany()+"  "+product.getName()+"  "+product.getPrice()+"  "+product.getCount());
         }
-
+        
     }
 }
