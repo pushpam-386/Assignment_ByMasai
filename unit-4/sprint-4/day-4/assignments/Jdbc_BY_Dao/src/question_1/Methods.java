@@ -5,8 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.mysql.cj.jdbc.result.ResultSetInternalMethods;
-
 public class Methods {
 	
 	PreparedStatement pdStatement;
@@ -52,18 +50,18 @@ public class Methods {
 	
 	public void getAllDetails(String table) {
 		try {
-		String queryString="Select salary from ?";
+		String queryString="Select * from ";
+		queryString+=table;
 		
 		connection=takeConnection();
 		pdStatement=connection.prepareStatement(queryString);
 		
-		pdStatement.setString(1, table);
 		ResultSet rs=pdStatement.executeQuery();
 		
 		while (rs.next()) {
-			System.out.println("Employee :"+rs.getInt("e_id")
-			+"Name :"+rs.getString("name")
-			+"Address :"+rs.getString("address")
+			System.out.println("Employee :"+rs.getInt("e_id")+"  "
+			+"Name :"+rs.getString("name")+"  "
+			+"Address :"+rs.getString("address")+"  "
 			+"Salary :"+rs.getFloat("salary"));
 		}
 		}
@@ -120,8 +118,8 @@ public class Methods {
 		pdStatement=connection.prepareStatement(queryString);
 		
 		pdStatement.setInt(1, emp.getE_id());
-		pdStatement.setString(1, emp.getName());
-		pdStatement.setFloat(1, emp.getSalary());
+		pdStatement.setString(2, emp.getName());
+		pdStatement.setFloat(3, emp.getSalary());
 		
 		pdStatement.executeUpdate();
 		
@@ -145,7 +143,7 @@ public class Methods {
 	
 	public void getNameOfId(int empId) {
 		try {
-		String queryString="select name from employee3 where e_id = ?";
+		String queryString="select * from employee3 where e_id = ?";
 		
 		connection=takeConnection();
 		pdStatement=connection.prepareStatement(queryString);
@@ -155,7 +153,8 @@ public class Methods {
 		ResultSet rs=pdStatement.executeQuery();
 		
 		if (rs!=null) {
-			System.out.println("Name of Employee :"+ rs.getString("E_id"));
+			rs.next();
+			System.out.println("Name of Employee :"+ rs.getInt("e_id"));
 		}
 		else {
 			System.out.println("No Employee of this id is there ");
@@ -192,9 +191,9 @@ public class Methods {
 		ResultSet rs=pdStatement.executeQuery();
 		
 		while (rs.next()) {
-			System.out.println("Employee :"+rs.getInt("e_id")
-			+"Name :"+rs.getString("name")
-			+"Address :"+rs.getString("address")
+			System.out.println("Employee :"+rs.getInt("e_id")+"  "
+			+"Name :"+rs.getString("name")+"  "
+			+"Address :"+rs.getString("address")+"  "
 			+"Salary :"+rs.getFloat("salary"));
 		}
 		
