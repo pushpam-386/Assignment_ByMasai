@@ -17,7 +17,7 @@ public class JpqlImplementation implements DaoJpqlInter {
         Query q= em.createQuery(queryString);
 		
 		List<Employee> list= q.getResultList();
-		if(list==null) {
+		if(list.size()==0) {
 			throw new EmployeeException("No Employee Found");
 		}
 		return list;
@@ -31,7 +31,7 @@ public class JpqlImplementation implements DaoJpqlInter {
         q.setParameter(1, address);
 		
 		List<Employee> list= q.getResultList();
-		if(list==null) {
+		if(list.size()==0) {
 			throw new EmployeeException("No Employee Found by address");
 		}
 		return list;
@@ -46,7 +46,7 @@ public class JpqlImplementation implements DaoJpqlInter {
         q.setParameter(2, endSalary);
 		
 		List<Employee> list= q.getResultList();
-		if(list==null) {
+		if(list.size()==0) {
 			throw new EmployeeException("No Employee Found by salary range");
 		}
 		return list;
@@ -60,7 +60,7 @@ public class JpqlImplementation implements DaoJpqlInter {
         q.setParameter(1, empId);
 		
 		Object[] or= q.getSingleResult();
-		if(or==null) {
+		if(or.length==0) {
 			throw new EmployeeException("No Employee Found by employeeId to show name and salary");
 		}
 		return or;
@@ -70,8 +70,8 @@ public class JpqlImplementation implements DaoJpqlInter {
 	@Override
 	public int getEmployeeSalaryById(int empId) throws EmployeeException {
 		EntityManager em =Connection.provideEM();
-		String queryString="select e.name, e.salary from Employee e where e.empId = ?1";
-        TypedQuery<Object> q= em.createQuery(queryString,Object.class);
+		String queryString="select  e.salary from Employee e where e.empId = ?1";
+        TypedQuery q= em.createQuery(queryString,Object.class);
         q.setParameter(1, empId);
 		
 		Object or= q.getSingleResult();

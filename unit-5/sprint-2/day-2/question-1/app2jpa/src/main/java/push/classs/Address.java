@@ -1,9 +1,10 @@
 package push.classs;
 
-import javax.persistence.Entity;
+import java.util.Objects;
 
-@Entity
+
 public class Address {
+	
 	private String state;
 	private String city;
 	private String pincode;
@@ -23,6 +24,25 @@ public class Address {
 		
 	}
 
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(city, pincode, state, type);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Address other = (Address) obj;
+		return Objects.equals(city, other.city) && Objects.equals(pincode, other.pincode)
+				&& Objects.equals(state, other.state) && Objects.equals(type, other.type);
+	}
 
 	@Override
 	public String toString() {

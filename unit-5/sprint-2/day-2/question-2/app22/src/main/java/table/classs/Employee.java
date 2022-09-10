@@ -2,12 +2,18 @@ package table.classs;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Employee implements Serializable {
 	
+	@Id
 	private int empID;
 	private String name;
 	private String address;
 	private int salary;
+	
 	public Employee(int empID, String name, String address, int salary) {
 	
 		this.empID = empID;

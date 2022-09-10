@@ -12,9 +12,11 @@ public class GetAllEmployeeBySalaryRange {
 	public static void main(String[] args) throws EmployeeException {
 		JpqlImplementation objectImplementation=new JpqlImplementation();
 		Scanner scanner=new Scanner(System.in);
-		System.out.println("Enter Address to find Employee:  ");
-		String address =scanner.next();
-		List<Employee> l1=objectImplementation.getAllEmployeeWithRangeSalary(2000, 5000);
+		System.out.println("Enter start range salary to find Employee:  ");
+		int startsal =scanner.nextInt();
+		System.out.println("Enter end range salary to find Employee:  ");
+		int endsal =scanner.nextInt();
+		List<Employee> l1=objectImplementation.getAllEmployeeWithRangeSalary(startsal, endsal);
 		for (Employee employee : l1) {
 			System.out.println("EmployeeI - "+employee.getEmpID()+", Employee name - "
 		+employee.getName()+" , Employee address -  "
