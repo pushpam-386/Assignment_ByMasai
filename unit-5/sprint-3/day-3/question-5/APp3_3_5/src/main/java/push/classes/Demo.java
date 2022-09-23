@@ -47,12 +47,12 @@ public class Demo {
 	
 	public static void main(String[] args) {
 		ApplicationContext ctx= new ClassPathXmlApplicationContext("applicationContext.xml");
-		Demo demo=ctx.getBean("Dem",Demo.class);
+		Demo demo=ctx.getBean("dem",Demo.class);
 		demo.showDetails();
+		
 		ClassPathXmlApplicationContext ctx2= (ClassPathXmlApplicationContext)ctx;
 		ctx2.close();
-	    System.gc();
-	
+		
 	}
 
 }

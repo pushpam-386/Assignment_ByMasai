@@ -12,10 +12,6 @@ public class Demo {
 		
 		travel.Show();
 		
-		Car car =ctx.getBean("c1", Car.class);
-		
-		car.show();
-		
 		
 		AnnotationConfigApplicationContext acc=(AnnotationConfigApplicationContext) ctx;
 		acc.close();

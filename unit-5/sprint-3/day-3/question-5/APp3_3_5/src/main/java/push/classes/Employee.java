@@ -7,8 +7,24 @@ public class Employee {
 	private String address;
 	private int salary;
 	
+	private Department department;
 	
 	
+	
+	public Department getDepartment() {
+		return department;
+	}
+	
+	
+
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+
+
+
 	@Override
 	public String toString() {
 		return "Employee [empId=" + empId + ", empName=" + empName + ", address=" + address + ", salary=" + salary
@@ -28,7 +44,6 @@ public class Employee {
 		this.address = address;
 		this.salary = salary;
 	}
-	
 	
 	
 	public int getEmpId() {
