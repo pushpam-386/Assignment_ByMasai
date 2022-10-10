@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>pageChange</title>
+        <style>
+            .maindiv{
+                display: flex;
+            }
+            .div{
+                border: 2px solid crimson;
+                width: 100px;
+                height: 100px;
+                margin: 50px;
+                background-color: rgba(164, 182, 187, 0.994);
+            }
+            .innerdiv{
+                margin: 35px;
+                color: white;
+            }
+            .list{
+                margin-top: 60px;
+                margin-left: -100px;
+                font-size: 30px;
+            }
+            #pagebar{
+                margin-left:  650px;
+                display: flex;
+                border-radius: 10px;
+                width: fit-content;
+                border: 2px solid  rgb(142, 184, 210);
+                
+            }
+            .page{
+                border: 4px solid  rgb(142, 184, 210);
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="maindiv"> <div class="div"><div class="innerdiv">64x64</div> </div> 
+        <ol class="list"><ol>Name</ol><ol>Department:</ol><ol>Other Information</ol> </div>
+
+        <div class="maindiv"> <div class="div"> <div class="innerdiv">64x64</div> </div> 
+        <ol class="list"><ol>Name</ol><ol>Department:</ol><ol>Other Information</ol> </div>
+
+        <div class="maindiv"> <div class="div"> <div class="innerdiv">64x64</div> </div> 
+        <ol class="list"><ol>Name</ol><ol>Department:</ol><ol>Other Information</ol> </div>
+
+        <div id="pagebar">
+            <div class="page">1</div>
+            <div class="page">2</div>
+            <div class="page">3</div>
+        </div>
+    </body>
+</html>
+
+<script>
+    var pages=document.getElementsByClassName("page");
+    for(let i=0;i<pages.length;i++){
+        pages[i].addEventListener("click",clickFun);
+        function clickFun(){
+            console.log(i+1);
+            var page=i+1;
+            let url='https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page='+page+'&orderBy=asc';
+            fetch(url)
+            .then((response) => response.json())
+            .then((data) => display(data));
+        }
+    }
+    function display(json){
+        console.log(json);
+        src="Employee.js"
+    }
+   
+</script>
