@@ -1,7 +1,5 @@
 package com.push.service;
 
-import java.util.*;
-
 import java.util.Date;
 
 import com.push.Exception.EmployeeException;
@@ -11,9 +9,9 @@ import java.util.List;
 
 public interface TasksService {
 	public Tasks createTasks(Tasks tasks);
-	public List<Tasks> getTaskByStartAndEndDate(Date startDate, java.util.Date deadLine)throws TasksException;
+//	public List<Tasks> getTaskByStartAndEndDate(Date startDate,Date deadline)throws TasksException;
 	public Tasks updateTasks(int id,Tasks tasks)throws TasksException;
 	public Tasks deleteTasks(int id)throws TasksException;
 	public Tasks getTaskByEmployeeId(int empId)throws EmployeeException, TasksException;
-	public List<Tasks> findOrderByDeadLineDescOrAscList(Date deadLine);
+//	public List<Tasks> findOrderByDeadlineDescOrAscList(Date deadline);
 }

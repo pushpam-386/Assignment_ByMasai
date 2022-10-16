@@ -29,11 +29,11 @@ public class TasksServiceImpl implements TasksService{
 		return tasks;
 	}
 
-	@Override
-	public List<Tasks> getTaskByStartAndEndDate(Date startDate, Date endDate) throws TasksException {
-		List<Tasks> tList= taskDao.findByStartDateAndDeadLine(startDate, endDate);
-		return tList;
-	}
+//	@Override
+//	public List<Tasks> getTaskByStartAndEndDate(Date startDate, Date endDate) throws TasksException {
+//		List<Tasks> tList= taskDao.findByStartDateAndDeadline(startDate, endDate);
+//		return tList;
+//	}
 
 	@Override
 	public Tasks updateTasks(int id, Tasks tasks) throws TasksException {
@@ -44,7 +44,6 @@ public class TasksServiceImpl implements TasksService{
 		opt.get().setDescription(tasks.getDescription());
 		opt.get().setDeadline(tasks.getDeadline());
 		opt.get().setStatus(tasks.getStatus());
-		opt.get().setId(tasks.getId());
 		
 		return opt.get();
 	}
@@ -73,10 +72,10 @@ public class TasksServiceImpl implements TasksService{
 		return tasks;
 	}
 
-	@Override
-	public List<Tasks> findOrderByDeadLineDescOrAscList(Date deadLine) {
-		List<Tasks> tList= taskDao.findOrderByDeadLineDescOrAscList(deadLine);
-		return tList;
-	}
+//	@Override
+//	public List<Tasks> findOrderByDeadlineDescOrAscList(Date deadLine) {
+//		List<Tasks> tList= taskDao.findOrderByDeadlineDescOrAscList(deadLine);
+//		return tList;
+//	}
 
 }

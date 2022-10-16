@@ -47,40 +47,40 @@ public class UserController {
 	}
 
 	@PatchMapping("/tasks/{id}")
-	public ResponseEntity<Tasks> updateTravels(@PathVariable ("id") int id,@RequestBody Tasks tasks) throws TasksException{
+	public ResponseEntity<Tasks> updateTasks(@PathVariable int id, @RequestBody Tasks tasks) throws TasksException{
 		Tasks tasks2 = tasksService.updateTasks(id, tasks);
 		return new ResponseEntity<Tasks>(tasks2,HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/tasks/{Id}")
-	public ResponseEntity<Tasks> deleteTasksById(@PathVariable("Id") int Id) throws TasksException{
+	public ResponseEntity<Tasks> deleteTasksById(@PathVariable int Id) throws TasksException{
 		Tasks tasks = tasksService.deleteTasks(Id);
 		return new ResponseEntity<Tasks>(tasks,HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/employee/{Id}")
-	public ResponseEntity<Employee> deleteEmployeeById(@PathVariable("Id") int Id) throws EmployeeException{
+	public ResponseEntity<Employee> deleteEmployeeById(@PathVariable int Id) throws EmployeeException{
 		Employee employee = employeeService.deleteEmployeeById(Id);
 		return new ResponseEntity<Employee>(employee,HttpStatus.OK);
 	}
 
 	
 	@GetMapping("/employee/{id}")
-	public ResponseEntity<Employee> getEmployeeDetailsById(@PathVariable("id") int id) throws EmployeeException{
+	public ResponseEntity<Employee> getEmployeeDetailsById(@PathVariable int id) throws EmployeeException{
 		Employee employee = employeeService.getEmployeeById(id);
 		return new ResponseEntity<Employee>(employee, HttpStatus.OK);
 	}
 	
 	@GetMapping("/tasks/employee_id={id}")
-	public ResponseEntity<Tasks> getTasksDetailsByByEmployeeId(@PathVariable("id") int id) throws EmployeeException, TasksException{
+	public ResponseEntity<Tasks> getTasksDetailsByByEmployeeId(@PathVariable int id) throws EmployeeException, TasksException{
 		Tasks tasks = tasksService.getTaskByEmployeeId(id);
 		return new ResponseEntity<Tasks>(tasks, HttpStatus.OK);
 	}
 	
-	@GetMapping("/tasks/{startDate}{deadLine}")
-	public ResponseEntity<List<Tasks>> getTasksDetailsByStartAndDeadLine(@PathVariable("startDate") Date startDate,@PathVariable("deadLine") Date deadLine) throws EmployeeException, TasksException{
-		List<Tasks> tasks = tasksService.getTaskByStartAndEndDate(startDate,deadLine);
-		return new ResponseEntity<List<Tasks>>(tasks, HttpStatus.OK);
-	}
+//	@GetMapping("/tasks/{startDate}/{deadline}")
+//	public ResponseEntity<List<Tasks>> getTasksDetailsByStartAndDeadLine(@PathVariable Date startDate,@PathVariable Date deadline) throws EmployeeException, TasksException{
+//		List<Tasks> tasks = tasksService.getTaskByStartAndEndDate(startDate,deadline);
+//		return new ResponseEntity<List<Tasks>>(tasks, HttpStatus.OK);
+//	}
 
 }

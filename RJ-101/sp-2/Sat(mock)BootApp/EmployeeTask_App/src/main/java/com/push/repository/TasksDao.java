@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.push.models.Tasks;
 
 public interface TasksDao extends JpaRepository<Tasks, Integer>{
-	public List<Tasks> findByStartDateAndDeadLine(Date startDate,Date deadLine);
-	public List<Tasks> findOrderByDeadLineDescOrAscList(Date deadLine);
+//	public List<Tasks> findByStartDateAndDeadline(Date startDate,Date deadline);
+//	public List<Tasks> findOrderByDeadlineDescOrAscList(Date deadline);
 }
