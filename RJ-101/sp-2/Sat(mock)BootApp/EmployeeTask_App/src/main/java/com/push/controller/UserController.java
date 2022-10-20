@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.push.Exception.EmployeeException;
@@ -47,7 +48,7 @@ public class UserController {
 	}
 
 	@PatchMapping("/tasks/{id}")
-	public ResponseEntity<Tasks> updateTasks(@PathVariable int id, @RequestBody Tasks tasks) throws TasksException{
+	public ResponseEntity<Tasks> updateTask(@PathVariable int id, @RequestBody Tasks tasks) throws TasksException{
 		Tasks tasks2 = tasksService.updateTasks(id, tasks);
 		return new ResponseEntity<Tasks>(tasks2,HttpStatus.OK);
 	}
@@ -71,8 +72,8 @@ public class UserController {
 		return new ResponseEntity<Employee>(employee, HttpStatus.OK);
 	}
 	
-	@GetMapping("/tasks/employee_id={id}")
-	public ResponseEntity<Tasks> getTasksDetailsByByEmployeeId(@PathVariable int id) throws EmployeeException, TasksException{
+	@GetMapping("/tasks?employee_id={id}")
+	public ResponseEntity<Tasks> getTasksDetailsByEmployeeId(@RequestParam int id) throws EmployeeException, TasksException{
 		Tasks tasks = tasksService.getTaskByEmployeeId(id);
 		return new ResponseEntity<Tasks>(tasks, HttpStatus.OK);
 	}
@@ -82,5 +83,11 @@ public class UserController {
 //		List<Tasks> tasks = tasksService.getTaskByStartAndEndDate(startDate,deadline);
 //		return new ResponseEntity<List<Tasks>>(tasks, HttpStatus.OK);
 //	}
+	
+	@GetMapping("/tasks?order_by=asc")
+	public ResponseEntity<Tasks> getTasksDetailsByEmployeeId(@RequestParam String str) throws EmployeeException, TasksException{
+		Tasks tasks = tasksService.getTaskByEmployeeId(str);
+		return new ResponseEntity<Tasks>(tasks, HttpStatus.OK);
+	}
 
 }

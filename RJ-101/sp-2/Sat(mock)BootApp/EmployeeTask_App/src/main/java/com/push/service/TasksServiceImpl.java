@@ -59,8 +59,9 @@ public class TasksServiceImpl implements TasksService{
 	}
 
 	@Override
-	public Tasks getTaskByEmployeeId(int empId) throws EmployeeException, TasksException {
-		Optional<Employee> eOptional=employeeDao.findById(empId);
+	public List<Tasks> getTaskByEmployeeId(String str) throws EmployeeException, TasksException {
+		if(str.equals("asc")) {
+		Optional<Employee> eOptional=taskDao.findAllByOrderByDeadlineAsc();
 		if (eOptional.isEmpty()) {
 			throw new EmployeeException("This Employee for getting Task is not there");
 		}

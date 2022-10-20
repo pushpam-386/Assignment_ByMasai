@@ -12,6 +12,6 @@ public interface TasksService {
 //	public List<Tasks> getTaskByStartAndEndDate(Date startDate,Date deadline)throws TasksException;
 	public Tasks updateTasks(int id,Tasks tasks)throws TasksException;
 	public Tasks deleteTasks(int id)throws TasksException;
-	public Tasks getTaskByEmployeeId(int empId)throws EmployeeException, TasksException;
+	public List<Tasks> getTaskByEmployeeId(String str)throws EmployeeException, TasksException;
 //	public List<Tasks> findOrderByDeadlineDescOrAscList(Date deadline);
 }
