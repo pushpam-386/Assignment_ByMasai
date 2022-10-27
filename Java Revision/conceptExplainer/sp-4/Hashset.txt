@@ -1,0 +1,53 @@
+HashSet() -->>>>
+
+-As it implements the Set Interface, duplicate values are not allowed.
+-Objects that you insert in HashSet are not guaranteed to be inserted in the same order.
+-Objects are inserted based on their hash code.
+-NULL elements are allowed in HashSet.
+
+
+
+Working --->>>
+
+All the classes of Set interface are internally backed up by Map.
+HashSet uses HashMap for storing its object internally. 
+To enter a value in HashMap we need a key-value pair, but in HashSet, we are passing only one value.
+
+
+Methods ---->>>>
+
+add(E e)		Used to add the specified element if it is not present, if it is present then return false.
+clear()			Used to remove all the elements from set.
+contains(Object o)	Used to return true if an element is present in set.
+remove(Object o)	Used to remove the element if it is present in set.
+iterator()	 	Used to return an iterator over the element in the set.
+isEmpty()		Used to check whether the set is empty or not. Returns true for empty and false for a non-empty condition for set.
+size()			Used to return the size of the set.
+
+
+Implementation in java --->>>
+
+import java.io.*;
+import java.util.*;
+
+class Main {
+	public static void main(String[] args)
+	{
+		HashSet<String> hs = new HashSet<String>();
+		hs.add("Go");
+		hs.add("For");
+		hs.add("it");
+		hs.add("A");
+		hs.add("B");
+		hs.add("C");
+		Iterator itr = hs.iterator();
+		while (itr.hasNext())
+			System.out.print(itr.next() + ", ");
+		System.out.println();
+		for (String s : hs)
+			System.out.print(s + ", ");
+		System.out.println();
+	}
+}
+
+
