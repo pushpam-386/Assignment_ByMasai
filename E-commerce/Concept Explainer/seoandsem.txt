@@ -1,0 +1,77 @@
+SEO is the act of improving the visibility of a website’s outcomes on specific search engines through unpaid 
+forms of online advertising. It is used to increase traffic to a website by improving its rank on the search 
+engine pages. 
+
+
+
+SEM is the act of improving the visibility of a website outcomes on specific search engines through paid 
+advertisements. It includes Search Engine Optimization, contextual advertising, AdSense, social networking, 
+pay-per-click (PPC), AdWords, and so on. 
+
+
+
+SEO----->>	                                SEM----->>
+SEO stands for Search Engine Optimization.	SEM stands for Search Engine Marketing.
+
+It is a part of SEM.	                        It is used for traffic generation and is a superset of SEO.
+                                                
+Results will take time to appear.	        Immediate result.
+
+Suitable for low-budget companies.	        Suitable for big-budget companies.
+
+The Click-Through Rate (CTR) of SEO is          The Click-Through Rate (CTR) of SEM is lower than SEO.
+higher than SEM.	                        
+
+Traffic potential is unlimited.	                Traffic potential is limited depending on the budget.
+
+It is inexpensive.	                        It is expensive.
+
+Long-term benefits.	                        Short-term benefits.
+
+SEO improves the visibility of the website.	SEM improves the sales of a small business.
+Competition is lesser due to the 
+
+requirement for organic content.	        Competition is higher in the targeted areas.
+
+The SEO search result doesn’t target            SEM search result targets the selected audience.
+any audience.	                                
+
+Example: Backlinks creation	                Example: Google Ads
+
+
+
+
+
+To improve Seo as in---->>
+
+1.Improve your page loading speed
+2.Produce high quality content
+3.Optimize your links
+4.Optimize your site for mobile devices
+5.Properly format your page
+6.Encourage sharing on social media
+7.Use keywords appropriately
+8.Create clean, focused, and optimized URLs
+9.Get your name out there
+10.Get set up on Google Business
+11.Use tools to outperform content marketing
+
+
+
+How does Digital Advertising work----->>>
+
+
+Digital marketing is a means of attaining business goals through the aid of digital platforms by 
+promoting the business’s products or services. The term has gained immense popularity over the past 
+few years and now is one of the most frequently used term everywhere including small and large businesses.
+
+Some of the most well-known strategies of Digital marketing are:
+
+-Search Engine Optimization (SEO)
+-Pay-per-click advertising (PPC)
+-Website Marketing
+-Content Marketing 
+-Social Media Marketing (SMM)
+-Email Marketing
+-Affiliate Marketing
+
