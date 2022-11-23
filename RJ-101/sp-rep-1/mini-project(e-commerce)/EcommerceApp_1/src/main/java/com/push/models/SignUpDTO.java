@@ -1,5 +1,7 @@
 package com.push.models;
 
+import java.util.List;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -15,11 +17,11 @@ import lombok.NoArgsConstructor;
 public class SignUpDTO {
 	
 	@NotNull
-	@Pattern(regexp="[a-z]{6,12}", message = "Username must be between 6 to 12 characters. Must only contain lowercase characters.")
+//	@Pattern(regexp="[a-z]", message = "Must only contain lowercase characters.")
 	private String userName;
 	
 	@NotNull
-	@Pattern(regexp="[a-z][A-Z]", message = "Username must contain only alphabet. ")
+//	@Pattern(regexp="[a-z][A-Z]", message = "Username must contain only alphabet. ")
 	private String name;
 	
 	@NotNull
@@ -33,6 +35,8 @@ public class SignUpDTO {
 	@Email
 	@NotNull
 	private String email;
+	
+	private List<AddressDTO> addresses;
 
 
 }

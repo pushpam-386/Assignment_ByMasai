@@ -1,13 +1,9 @@
 package com.push.models;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,24 +13,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class User {
+public class Address {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer userId;
-
-	private String userName;
+	private Integer addressId;
+	private String houseOrApartment;
+	private String landmark;
+	private String district;
+	private String state;
+	private String pincode;
 	
-	private String name;
-
-	private String userType;
-	
-	private String mobileNo;
-	
-	private String email;
-	
-	@OneToMany(cascade =CascadeType.ALL)
-	private List<Address> addresses;
-
 
 }
