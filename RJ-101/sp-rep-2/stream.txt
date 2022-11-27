@@ -1,0 +1,32 @@
+1.What is Stream API in Java?
+--->The Stream API is used to process collections of objects. A stream is a sequence of objects that supports
+various methods which can be pipelined to produce the desired result.
+
+
+2.How do you use the map() function in Java?
+--->This method takes a Function object as an argument and map the element to the new element and
+returns the newly mapped elements in another stream object.
+
+
+
+3.Explain the difference between collection and stream?
+--->The Stream API is used to process collections of objects whereas collection is used as a container to 
+store data in state of object.
+
+
+
+4.What does the filter() method do? When would you use it?
+--->This method take Predicate object as an argument and filter the stream based on the Predicate condition,
+and returns the filtered elements in a another stream object.
+It will not filter the elements from the source collection object
+
+5.Can you convert an array into a stream? Write a code to do the same
+--->int[] arr = Stream.of(bf.readLine().trim().split(" "))
+            .mapToInt(Integer::parseInt)
+            .toArray();
+
+
+6.How many types of Stream operations are there? Name them?
+--->There are two types of methods in Stream interface:
+1. Intermediate methods
+2. Terminal methods
