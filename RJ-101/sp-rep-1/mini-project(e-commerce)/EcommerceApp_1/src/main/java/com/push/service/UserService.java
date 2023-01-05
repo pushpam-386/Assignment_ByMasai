@@ -1,12 +1,11 @@
 package com.push.service;
 
 import com.push.exception.UserException;
-import com.push.models.AddressDTO;
-import com.push.models.SignUpDTO;
+import com.push.models.User;
 
 public interface UserService {
 	
-	public String signUp(SignUpDTO signUp) throws UserException;
-	public String adduserAddressDetails(AddressDTO addressDTO, String mobileNo)throws UserException;
+	public String signUp(User signUp) throws UserException;
+	
 
 }

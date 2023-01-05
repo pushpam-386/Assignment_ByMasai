@@ -5,37 +5,27 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class User {
+@ToString
+@EqualsAndHashCode
+public class Comments {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer userId;
-
-	private String userName;
+	private Integer commentId;
 	
-	private String name;
-
-	private String userType;
-	
-	private String mobileNo;
-	
-	private String email;
-	
-	@OneToOne(cascade =CascadeType.ALL)
-	private Address addresses;
-
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Posts posts;
 
 }

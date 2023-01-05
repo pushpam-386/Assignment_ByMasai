@@ -1,41 +1,39 @@
 package com.push.models;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class User {
+@ToString
+@EqualsAndHashCode
+public class Posts {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer userId;
-
-	private String userName;
+	private Integer postId;
 	
-	private String name;
-
-	private String userType;
+	private String description;
 	
-	private String mobileNo;
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Users users;
 	
-	private String email;
-	
-	@OneToOne(cascade =CascadeType.ALL)
-	private Address addresses;
-
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "comments")
+	private List<Comments> comments;
 
 }
